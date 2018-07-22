@@ -25,7 +25,8 @@ This app is being built using Xamarine for both Android and iOS compatiblity. We
 
 ## Open Source Components to Utilize
 
-- SignalProtocol: Secure messaging
+- SignalProtocol: Secure messaging: https://github.com/signalapp/libsignal-protocol-java
+- Dat: https://datproject.org/ for p2p based sharing to allow for a serverless infrastructure
 - ...
 
 ## Roadmap
