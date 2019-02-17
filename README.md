@@ -1,63 +1,111 @@
-# FakeBlock - ( In Planning Phases )
+# FakeBlock
 
-FakeBlock, inspired by George-Micheal Bluth's product of the same name, aims to be a free, decentralized, open-source, social network for the rest of us. This is not an app for connecting with elementary school friends. It's an app for building real relationships. 
+FakeBlock a social network for the rest of us. Inspired by George-Micheal Bluth's product of the same name, FakeBlock aims to be an ad-free, decentralized, prviate, secure, open-source socail network. This is not an app for connecting with elementary school friends. It's an app for building and maintaining real connections.
 
-## Goals
+## Connections
 
-- **Decentralized**: Using p2p technology FakeBlock will allow user data to be stored in a decentralized network of nodes that will run free from corporate and government influence to provide the greatest stablity. Small chuncks of the FakeBlock network will be distributed to all FakeBlock users who will then host them. 
+Unlike other social networks, FakeBlock's social core resolves around the idea of building 'connections' with others. NOT friends. In the social networks of today, the concept of a friend has been gutted and turned into a marketing tool and a sign of social status. Connections, as a concept is something bigger. Connections are varied, they can change and they can attrophy. 
 
-- **Secure**: Using block chain technology FakeBlock will ensure that users data is crypotgraphically secure. To prevent from abuse, user will be validated based on their real world connections to other users. All logins are passwords less: Users are initially verified by other verified users who are on the site; Users log in using keys stored on their FakeBlock devices; If a device get's lost or replaced, a user can reregister a new device by verifying their identity with their originaly verified friends. 
+### Types of Connections
 
-- **Authentic**: From a social networking perspective, FakeBlock aims to be the most authentic by requiring that users who connect to each other through FakeBlock know each other in reality. The FakeBlock app uses NFC/BlueTooth to verify when you're in contact with another FakeBlock user. All logins are invite only, meaning you need to personally know another FakeBlock user to begin using the service. The less active your interactions with your FakeBlock friends the less you'll see them within your profile and eventually they'll disappear alltogether and you'll need to reconnect with them in real life to add them again. 
+*Note - More types of connections can be added but the word 'friend' is not allowed. Connections are defined as a relationship between two people that is eternal. For instance, no matter what happens a Child will always be a Child to a Parent. Connections are also topical as in the relate to something both locally shared by both users.
 
-- **Trusted**: Users will be allowed to share lots of forms of content with their friends and the FakeBlock community but all content will be tagged and labeled using an automatic vetting process to allow users to make correct judgements as to the validatity of the statement. Using FakeChecker ( a component of FakeBlock ) a given claim will be checked for sources in a recursive fashion. The deeper the source links, and the more numerous credible sources that are found, the higher the score of the statement, and the higher the credibilty of the commentor. Each user can then decide based on the labels what to think the content being presented. 
+- Parent
+- Grandparent
+- Child
+- Sibling
+- Spouse
+- Relative
+- Colleague
+- Teammate
+- Classmate
 
-## Build
+#### Creating Connections
 
-This app is being built using Xamarine for both Android and iOS compatiblity. Web compatiblity will be next on the agenda. 
+Users on FakeBlook create connections with other users via in person communication. In fact, a connection can not be created with another user unless that person is within a given proximity. After which, the users can continue to connect with each other over any distance. 
+
+#### Connection Attrophy
+
+Connections that are not maintained, as in the real world, will begin to attrophy. Once fully disconnected, users will need to re-establish them with end person contact. Connections are maintained and stregthened through simple, basic communication. The more communication, the better the connection will be. 
+
+## Features and Goals
+
+### Primary Features
+
+- Messaging
+- Calling
+- Photo and content sharing
+
+### Goals
+
+**Secure**
+- Security first
+    - open source
+    - encrypted everything: mesaging, calling, photos sharing
+- Secure encrypted messaging
+- Secure encrypted calling
+- Secure encrypted photo and media sharing
+- Password-less: All authentications performed bia on-device security and public key chains of trust. 
+
+**Authentic**: 
+- All interactions are initiated via in-person contact mean that two users *must* know each other in real life. This helps ensure that who you think you're talking to is actually who you're talking to. 
+- The lack of having connections rather than 'friends' means you never have to worry about unfriending someone who you know longer care to be associated with. Connection links will organically grow and dissolve as they do in the real world. 
+
+**Trusted**
+- Private and ad free. None of your personal data ever leaves your device and data stored in the cloud is encyrpted using a key that only you have access to. 
+- Free: A free teir will exist which is subsidized by those paying for more connections. 
+- Local: In the event you want to run you're own server and create your own network, that's okay too. 
+- Labeled: All data shared in public will be scrutized and labeled for credibility. 
+- Users will be unable to share data which contains information about others without the permission of those individuals. 
+
+- The components
+
+### Handshake
+
+- Two devices verify each other using both proximity and shared keys. Bluetooth for proximity and scanning of QR codes to exchanges keys
+
+### User validation
+
+- A user can be validated by having their public key signed with a by a key from another user who has also been verified. 
+- Verification involves a chain of trust. This present an interesting problem of scale. How can you have a chain of trust spanning hundreds or thousands of certificates
 
 ## Components
 
-- **FakeBlockCore**: Core libraries including UI, Messaging, Photos, Video, Audio, User Relational Components
-- **FakeChecker**: Libraries to scan a given statement and return a label with metadata about the validity of the statement. 
-- **BlockSync**: Engine which descributes the FakeBlock core service amount various hosts. 
-- **FakeChain**: Block chain backend storage mechanism for user data. 
+- **FakeBlockCore**: Core libraries, Messaging, Photos, Video, Audio, User Relational Components
+- **FakeBlockAndriod**: Android app
+- **FakeBlockiOS**: iOS app
+- **FakeBlockWin**: Win app
+- **FakeBlockMac**: Mac app
+- **FakeBlockNix**: Linux app
 
-## Open Source Components to Utilize
+## Chain of Trust
 
-- SignalProtocol: Secure messaging: https://github.com/signalapp/libsignal-protocol-java
-- Dat: https://datproject.org/ for p2p based sharing to allow for a serverless infrastructure
-- ...
+1. root key
+    - subroot 1
+        - user key
+            - user key
+                - user key
+            - user key
+                - etc...
+        - user key
+    - subroot 2
+        - user key
+        - etc..
+    - subroot 3
+        - user key
+        - etc...
 
-## Roadmap
+**Workflow**
 
-- [x] - Create basic project plan and readme. 
-- [ ] - Set up project development environment and push.
-- [ ] - Create a proof of concept App UI
-- [ ] - Create a proof of concept animation detailing various user interaction scenarios. 
-- [ ] - Create a asymentric key based login mechanism using LetsEncrypt certificates. 
-- [ ] - Create a bluetooth based user authentication and verification process for users who are in close proximity
-- [ ] - Create a sql databsaed backed by a backend blockchain which is hosted on each users' device. 
-- ..
+- A root key is created
+- The root key signs 3 admin keys. Admin keys are special keys that do not need to be verified and function as proxy for the root key. They are essentially intermediate CAs. Once signed, the 3 admin keys are instantly set as verified users. This allows them to sign any number of user keys.  
+- The admin keys begin signing users keys. 
+- A user key must be signed by 3 other verified keys to become verified. Once verified, a user key can begin verifying other user keys by signing them.
+- Eventually all users on the platform will become verified users. 
 
-## Technologies to Learn
+**Result**
+- Verified users on the platform will have special benefits and can also restore their accounts from encrypted server side backups. 
+- On each user's device will contain their encrypted private key
+- Essentially, every user then has a key that has been signed and contains a valid chain of trust to trace back who they are. 
 
-- Blockchain building
-- Crypotgraphy and public private key pairs
-- C# ( Xamarin )
-- Swift (iOS)
-- Java ( Andriod )
-- Javascript ( Web )
-- ...
-
-## Contribute
-
-- I'm still in the planning phase but if you have ideas, questions or suggestions, just make an issue!
-
-## Maintainers
-
-- geogboe - George
-
-## Copywrite
-
-2018 - Present @Adeium.net
+( I'm sure there's a good mathematical formula for this...still working it out. )
